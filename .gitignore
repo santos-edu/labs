@@ -1,0 +1,17 @@
+# Secrets / Env
+.env
+*.env.local
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+
+# Lab artifacts (generated during execution)
+**/post.md
+**/*.tmp
+**/generated/
