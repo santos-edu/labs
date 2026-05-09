@@ -1,16 +1,17 @@
-# Labs Monorepo
+# Labs
 
-Laboratórios automatizados de SRE/Plataforma — curadoria via n8n + IA, execução local segura com agentes, e publicação no Dev.to.
+Laboratórios automatizados de SRE/Plataforma — curadoria via n8n + IA (do repositório [lab-constructo](https://github.com/santos-edu/lab-constructo)), execução local segura com agentes, e publicação no Dev.to.
 
 ## Estrutura
 
 ```
-├── n8n-server/          # Docker Compose do orquestrador (n8n + PostgreSQL)
 ├── labs/
 │   └── YYYY-MM-tema/    # Cada laboratório semanal em seu diretório
 │       ├── PRD.md        # Documento de requisitos gerado pela IA
 │       ├── post.md       # Rascunho do artigo Dev.to (gerado após execução)
 │       └── ...           # Manifestos, código, testes
+├── templates/
+│   └── PRD.md           # Template para PRD
 ├── .gitignore
 └── README.md
 ```
@@ -22,11 +23,9 @@ Laboratórios automatizados de SRE/Plataforma — curadoria via n8n + IA, execu�
 3. **Publicação** — agente local gera `post.md` e envia rascunho para Dev.to
 4. **Segundo cérebro** — Obsidian Git sincroniza aprendizado a cada 10min
 
-## Subindo o n8n (Oracle Cloud Free Tier)
+## Repositórios
 
-```bash
-# Na VM da Oracle com Docker instalado:
-docker compose -f n8n-server/docker-compose.yml up -d
-```
-
-Acessar: `http://<IP-PUBLICO>:5678`
+| Repositório | Visibilidade | Finalidade |
+|---|---|---|
+| [lab-constructo](https://github.com/santos-edu/lab-constructo) | Privado | Infraestrutura, Docker Compose, scripts, configs |
+| labs | Público | Código e documentação dos laboratórios |
