@@ -1,0 +1,18 @@
+{
+  "checkout:http_5xx_spike:payments:us-east-1": {
+    "title": "Checkout 5xx caused by payments dependency",
+    "checks": [
+      "Compare error rate before and after latest deploy.",
+      "Check payments dependency status.",
+      "Rollback checkout only if dependency is healthy."
+    ]
+  },
+  "api:latency_p95_high:database:us-east-1": {
+    "title": "API latency driven by database dependency",
+    "checks": [
+      "Check slow queries.",
+      "Compare connection pool saturation.",
+      "Inspect database CPU and lock wait time."
+    ]
+  }
+}

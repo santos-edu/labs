@@ -1,0 +1,32 @@
+[
+  {
+    "id": "inc-001",
+    "service": "checkout",
+    "symptom": "http_5xx_spike",
+    "metric": "error_rate",
+    "value": 12.4,
+    "deploy_sha": "a1b2c3",
+    "dependency": "payments",
+    "region": "us-east-1"
+  },
+  {
+    "id": "inc-002",
+    "service": "checkout",
+    "symptom": "http_5xx_spike",
+    "metric": "error_rate",
+    "value": 9.8,
+    "deploy_sha": "d4e5f6",
+    "dependency": "payments",
+    "region": "us-east-1"
+  },
+  {
+    "id": "inc-003",
+    "service": "api",
+    "symptom": "latency_p95_high",
+    "metric": "latency_p95_ms",
+    "value": 1800,
+    "deploy_sha": null,
+    "dependency": "database",
+    "region": "us-east-1"
+  }
+]
