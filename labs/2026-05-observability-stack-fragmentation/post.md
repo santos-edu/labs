@@ -1,26 +1,50 @@
 # Fragmentacao de observabilidade cloud native
 
-## Contexto
+## Tese
 
-Tema escolhido a partir de pesquisa semanal: fragmentacao de stacks de observabilidade em ambientes cloud native.
+O problema central da observabilidade cloud native nao e falta de ferramentas; e a falta de um contrato comum entre metricas, logs e traces.
 
-## Hipotese
+## Por Que Isso Importa
 
-Mesmo com ferramentas maduras, times SRE ainda sofrem quando metricas, logs e traces ficam espalhados.
+Em incidentes reais, o custo nao esta apenas em coletar sinais. O custo aparece quando o SRE precisa alternar entre dashboards, logs e traces sem um identificador comum, sem semantica consistente e sem caminho claro para correlacao.
 
-## Lab
+Essa fragmentacao aumenta MTTR porque transforma diagnostico em trabalho manual de busca.
 
-Foi criado um app HTTP minimo:
+## O Lab
 
-- `/work` gera log JSON e trace;
-- `/metrics` expoe metricas Prometheus;
-- `traces.jsonl` armazena spans locais.
-- `docker compose` roda o lab de forma isolada.
+O lab cria um app HTTP minimo com tres sinais separados:
 
-## Resultado
+```bash
+touch traces.jsonl
+docker compose up --build -d
+tests/smoke.sh
+docker compose down
+```
 
-O lab mostra que os tres sinais existem, mas ficam em lugares diferentes: stdout, endpoint Prometheus e arquivo local. Isso cria friccao para correlacionar incidentes.
+Endpoints:
+
+- `/work`: executa trabalho falso, gera log e trace;
+- `/metrics`: expoe metricas em formato Prometheus;
+- `traces.jsonl`: guarda spans em arquivo local.
+
+## Evidencias
+
+- O endpoint `/work` retorna um `trace_id`.
+- O log JSON no stdout tambem inclui `trace_id`.
+- As metricas em `/metrics` mostram contadores e latencia media, mas nao carregam o mesmo contexto do trace.
+
+## Insights
+
+1. Ter os tres sinais nao significa ter observabilidade integrada.
+2. O `trace_id` ja mostra o valor de um contrato comum, mesmo em um lab pequeno.
+3. Prometheus resolve bem serie temporal, mas nao resolve sozinho narrativa de incidente.
+4. Logs sao ricos em contexto, mas viram busca manual quando nao seguem padrao.
+5. OpenTelemetry entra como camada de padronizacao antes de ser uma ferramenta de coleta.
+
+## Limites
+
+Este lab nao prova escala, custo operacional nem qualidade de dashboards. Ele mostra apenas o ponto de friccao: sinais separados exigem correlacao manual.
 
 ## Proximo Passo
 
-Adicionar OpenTelemetry SDK e Collector para unificar a coleta.
+Adicionar OpenTelemetry SDK e Collector para enviar traces e metricas por um caminho comum.
