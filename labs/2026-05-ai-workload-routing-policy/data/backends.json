@@ -1,0 +1,26 @@
+[
+  {
+    "name": "fast-gpu",
+    "type": "gpu",
+    "p95_ms": 450,
+    "cost_per_1k_tokens": 0.018,
+    "max_tokens": 16000,
+    "queue_depth": 7
+  },
+  {
+    "name": "cheap-cpu",
+    "type": "cpu",
+    "p95_ms": 1800,
+    "cost_per_1k_tokens": 0.002,
+    "max_tokens": 4000,
+    "queue_depth": 1
+  },
+  {
+    "name": "balanced-gpu",
+    "type": "gpu",
+    "p95_ms": 850,
+    "cost_per_1k_tokens": 0.009,
+    "max_tokens": 8000,
+    "queue_depth": 2
+  }
+]

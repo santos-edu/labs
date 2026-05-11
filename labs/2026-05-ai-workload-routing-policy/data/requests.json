@@ -1,0 +1,23 @@
+[
+  {
+    "id": "req-001",
+    "tokens": 1200,
+    "latency_budget_ms": 1000,
+    "max_cost": 0.02,
+    "priority": "interactive"
+  },
+  {
+    "id": "req-002",
+    "tokens": 3500,
+    "latency_budget_ms": 2500,
+    "max_cost": 0.01,
+    "priority": "batch"
+  },
+  {
+    "id": "req-003",
+    "tokens": 12000,
+    "latency_budget_ms": 1200,
+    "max_cost": 0.30,
+    "priority": "interactive"
+  }
+]
