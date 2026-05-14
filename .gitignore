@@ -12,6 +12,5 @@ Thumbs.db
 *~
 
 # Lab artifacts (generated during execution)
-**/post.md
 **/*.tmp
 **/generated/
