@@ -11,7 +11,6 @@ Validar que o control plane sobe localmente.
 ## Comandos
 
 ```bash
-cd ../lab-constructo
 make validate
 make up
 make ps
@@ -26,4 +25,4 @@ curl -I http://localhost:5678
 
 ## Proximo Passo
 
-Criar um workflow manual simples no n8n.
+Verificar o ambiente local e documentar o comportamento observado.

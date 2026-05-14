@@ -20,7 +20,7 @@ Inclua os comandos em um bloco curto:
 
 Feche com um proximo passo concreto.
 
-## Checklist invisivel antes de publicar
+## Checklist de revisão
 
 - A tese aparece naturalmente no texto.
 - Ha evidencias, nao so opiniao.

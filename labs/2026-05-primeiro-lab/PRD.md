@@ -23,6 +23,5 @@ Validar o MVP do control plane: subir n8n + PostgreSQL localmente e confirmar ac
 
 ## Fora de Escopo
 
-- Workflow n8n;
-- GitHub automation;
-- Dev.to automation.
+- Integrações externas;
+- Desenvolvimento de ferramentas de entrega.

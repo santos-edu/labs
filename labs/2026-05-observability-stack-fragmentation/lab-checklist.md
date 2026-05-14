@@ -8,4 +8,4 @@
 - [x] resultados documentados;
 - [x] `post.md` escrito;
 - [x] checklist de insight preenchida;
-- [ ] rascunho enviado ao Dev.to, se aplicavel.
+- [ ] revisao final do resultado, se aplicavel.

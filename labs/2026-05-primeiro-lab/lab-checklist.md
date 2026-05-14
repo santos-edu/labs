@@ -7,4 +7,4 @@
 - [x] testes ou validacoes executados;
 - [x] resultados documentados;
 - [x] `post.md` escrito;
-- [ ] rascunho enviado ao Dev.to, se aplicavel.
+- [ ] revisao final do resultado, se aplicavel.

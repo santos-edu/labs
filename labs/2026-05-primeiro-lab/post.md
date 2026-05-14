@@ -4,7 +4,7 @@
 
 Tema do laboratorio: criar a base local do control plane para automatizar laboratorios SRE/SWE.
 
-Primeiro passo do projeto: provar que n8n e PostgreSQL sobem com Docker Compose antes de automatizar workflows.
+Primeiro passo do projeto: provar que n8n e PostgreSQL sobem com Docker Compose antes de avançar para a próxima etapa.
 
 ## Execucao
 
@@ -21,4 +21,4 @@ O n8n subiu com PostgreSQL via Docker Compose. O endpoint local respondeu `200 O
 
 ## Aprendizado
 
-Antes de criar workflows e automacoes, o ambiente base precisa estar simples e reproduzivel.
+Antes de avançar para a próxima fase, o ambiente base precisa estar simples e reproduzivel.
